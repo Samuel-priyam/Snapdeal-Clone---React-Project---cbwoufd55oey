@@ -181,6 +181,9 @@ const Cart = () => {
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart, history]);
+  
+    const quantity = useSelector(state=>state.cart.quantity)
+
   return (
     <Container>
       <Navbar />
@@ -190,7 +193,7 @@ const Cart = () => {
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
+            <TopText>Shopping Bag({quantity})</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
